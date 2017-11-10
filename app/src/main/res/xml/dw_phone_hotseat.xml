@@ -31,7 +31,10 @@
         launcher:screen="1"
         launcher:x="1"
         launcher:y="0">
-        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MESSAGING;end" />
+        <favorite
+        launcher:packageName="org.smssecure.smssecure"
+        launcher:className="org.smssecure.smssecure.RoutingActivity"
+        />
         <favorite launcher:uri="sms:" />
         <favorite launcher:uri="smsto:" />
         <favorite launcher:uri="mms:" />
@@ -43,6 +46,10 @@
         launcher:screen="2"
         launcher:x="2"
         launcher:y="0">
+        <favorite
+        launcher:packageName="net.sourceforge.opencamera"
+        launcher:className="net.sourceforge.opencamera.MainActivity"
+        />
         <favorite launcher:uri="#Intent;action=android.media.action.STILL_IMAGE_CAMERA;end" />
         <favorite launcher:uri="#Intent;action=android.intent.action.CAMERA_BUTTON;end" />
     </resolve>
@@ -61,8 +68,10 @@
         launcher:screen="4"
         launcher:x="4"
         launcher:y="0">
-        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MARKET;end" />
-        <favorite launcher:uri="market://details?id=com.android.launcher" />
+        <favorite
+        launcher:packageName="com.github.yeriomin.yalpstore"
+        launcher:className="com.github.yeriomin.yalpstore.InstalledAppsActivity"
+        />
     </resolve>
 
 </favorites>
