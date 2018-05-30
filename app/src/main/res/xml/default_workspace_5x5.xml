@@ -67,8 +67,8 @@
         launcher:x="3"
         launcher:y="-1" >
         <favorite
-        launcher:packageName="com.shapps.mintubeapp"
-        launcher:className="com.shapps.mintubeapp.MainActivity"
+        launcher:packageName="com.android.settings"
+        launcher:className="com.android.settings.Settings"
         />
     </resolve>
 
