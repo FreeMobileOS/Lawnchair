@@ -69,8 +69,8 @@
         launcher:x="4"
         launcher:y="0">
         <favorite
-        launcher:packageName="com.github.yeriomin.yalpstore"
-        launcher:className="com.github.yeriomin.yalpstore.InstalledAppsActivity"
+        launcher:packageName="com.simplemobiletools.applauncher"
+        launcher:className="com.simplemobiletools.applauncher.activities.SplashActivity.Orange"
         />
     </resolve>
 
