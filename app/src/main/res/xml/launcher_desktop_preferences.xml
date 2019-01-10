@@ -7,7 +7,7 @@
         android:title="@string/pref_category_pixel_searchbar">
 
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="pref_showPixelBar"
             android:persistent="true"
             android:title="@string/show_pixel_bar_pref_title" />
@@ -27,14 +27,14 @@
             android:title="@string/use_wide_searchbar_pref_title" />
 
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:dependency="pref_fullWidthSearchbar"
             android:key="pref_showSearchPill"
             android:persistent="true"
             android:title="@string/show_search_pill_title" />
 
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:dependency="pref_fullWidthSearchbar"
             android:key="pref_showDateOrWeather"
             android:persistent="true"
