@@ -43,7 +43,7 @@
             app:steps="24"
             app:summaryFormat="%.0fdp"
             app:summaryMultiplier="1"
-            app:defaultSeekbarValue="8"
+            app:defaultSeekbarValue="0"
             android:persistent="true" />
 
         <ch.deletescape.lawnchair.preferences.DockAutoModeSeekbarPreference
@@ -102,7 +102,7 @@
         <ch.deletescape.lawnchair.preferences.StyledSwitchPreferenceCompat
             android:key="pref_dockSearchBar"
             android:title="@string/dock_search_bar"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:persistent="true" />
 
         <ch.deletescape.lawnchair.preferences.StyledSwitchPreferenceCompat

@@ -42,8 +42,8 @@ abstract class DockStyle(protected val manager: StyleManager) {
         get() = opacity.toFloat() / 255f
         set(value) { opacity = (value * 255f).roundToInt() }
 
-    private class RoundedStyle(manager: StyleManager) : PredefinedStyle(manager, defaultGradient = true, defaultShadow = false, defaultRadius = 16f, defaultArrow = false)
-    private class GradientStyle(manager: StyleManager) : PredefinedStyle(manager, defaultGradient = true)
+    private class RoundedStyle(manager: StyleManager) : PredefinedStyle(manager, defaultGradient = false, defaultShadow = true, defaultRadius = 0f, defaultArrow = false)
+    private class GradientStyle(manager: StyleManager) : PredefinedStyle(manager, defaultGradient = false)
     private class FlatStyle(manager: StyleManager) : PredefinedStyle(manager)
     private class TransparentStyle(manager: StyleManager) : PredefinedStyle(manager, defaultGradient = true, defaultOpacity = 0)
     private class HiddenStyle(manager: StyleManager) : PredefinedStyle(manager, defaultArrow = false, defaultGradient = true, defaultRadius = 16f, defaultHide = true) {
@@ -66,9 +66,9 @@ abstract class DockStyle(protected val manager: StyleManager) {
 
     private abstract class PredefinedStyle(manager: StyleManager,
                                            val defaultGradient: Boolean = false,
-                                           val defaultShadow: Boolean = false,
+                                           val defaultShadow: Boolean = true,
                                            val defaultRadius: Float = 0f,
-                                           val defaultOpacity: Int = -1,
+                                           val defaultOpacity: Int = 40,
                                            val defaultArrow: Boolean = true,
                                            val defaultHide: Boolean = false) : DockStyle(manager) {
 
@@ -119,7 +119,7 @@ abstract class DockStyle(protected val manager: StyleManager) {
         var dockPreset by prefs.StringIntPref("pref_dockPreset", 1, onChangeListener)
         val dockDefaultOpacity = -1
         var dockOpacity by prefs.AlphaPref("pref_hotseatCustomOpacity", dockDefaultOpacity, onChangeListener)
-        var dockRadius by prefs.FloatPref("pref_dockRadius", 16f, onChangeListener)
+        var dockRadius by prefs.FloatPref("pref_dockRadius", 0f, onChangeListener)
         var dockShadow by prefs.BooleanPref("pref_dockShadow", true, onChangeListener)
         var dockShowArrow by prefs.BooleanPref("pref_hotseatShowArrow", false, onChangeListener)
         var dockGradient by prefs.BooleanPref("pref_dockGradient", false, ::onGradientChanged)

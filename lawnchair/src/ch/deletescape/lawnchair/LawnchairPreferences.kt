@@ -126,7 +126,7 @@ class LawnchairPreferences(val context: Context) : SharedPreferences.OnSharedPre
     val smartspaceTime by BooleanPref("pref_smartspace_time", false, refreshGrid)
     val smartspaceTimeAbove by BooleanPref("pref_smartspace_time_above", false, refreshGrid)
     val smartspaceTime24H by BooleanPref("pref_smartspace_time_24_h", false, refreshGrid)
-    val smartspaceDate by BooleanPref("pref_smartspace_date", true, refreshGrid)
+    val smartspaceDate by BooleanPref("pref_smartspace_date", false, refreshGrid)
     var smartspaceWidgetId by IntPref("smartspace_widget_id", -1, doNothing)
     var weatherProvider by StringPref("pref_smartspace_widget_provider",
             SmartspaceDataWidget::class.java.name, ::updateSmartspaceProvider)
@@ -142,7 +142,7 @@ class LawnchairPreferences(val context: Context) : SharedPreferences.OnSharedPre
     val dockStyles = DockStyle.StyleManager(this, restart, resetAllApps)
     val dockColoredGoogle by BooleanPref("pref_dockColoredGoogle", false, doNothing)
     val dockSearchBarPref by BooleanPref("pref_dockSearchBar", Utilities.ATLEAST_MARSHMALLOW, restart)
-    inline val dockSearchBar get() = !dockHide && dockSearchBarPref
+    inline val dockSearchBar get() = false
     val dockRadius get() = dockStyles.currentStyle.radius
     val dockShadow get() = dockStyles.currentStyle.enableShadow
     val dockShowArrow get() = dockStyles.currentStyle.enableArrow
