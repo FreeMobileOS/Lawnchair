@@ -239,7 +239,7 @@ public class HotseatQsbWidget extends AbstractQsbLayout implements o,
         if (pm.queryIntentActivities(searchIntent, 0).isEmpty()) {
             try {
                 context.startActivity(
-                        new Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com")));
+                        new Intent(Intent.ACTION_VIEW, Uri.parse("https://yandex.com")));
                 mActivity.openQsb();
             } catch (ActivityNotFoundException ignored) {
                 try {
