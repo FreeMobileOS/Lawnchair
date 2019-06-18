@@ -72,23 +72,6 @@ class LawnchairAppTransitionManagerImpl(context: Context) : LauncherAppTransitio
 
     override fun getClosingWindowAnimators(targets: Array<out RemoteAnimationTargetCompat>): Animator {
         if (allowWindowIconTransition(targets)) {
-            targets.forEach {
-                if (it.mode == MODE_CLOSING) {
-                    loadTask(it.taskId)?.let { task ->
-                        val component = TaskUtils.getLaunchComponentKeyForTask(task.key)
-                        findIconForComponent(component, useScaleAnim)?.let { v ->
-                            iconBounds = getViewBounds(v)
-                            val anim = AnimatorSet()
-
-                            val windowSourceBounds = getWindowSourceBounds(targets)
-                            playIconAnimators(anim, v, windowSourceBounds, true)
-                            anim.play(getOpeningWindowAnimators(v, targets, windowSourceBounds, true))
-
-                            return anim
-                        }
-                    }
-                }
-            }
             iconBounds = null
         }
         if (useScaleAnim) {

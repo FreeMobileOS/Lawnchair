@@ -27,7 +27,7 @@ import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
 import java.lang.ref.WeakReference;
 
 public class LauncherClient {
-    private static int apiVersion = -1;
+    private static int apiVersion = 1;
 
     private ILauncherOverlay mOverlay;
     private final IScrollCallback mScrollCallback;
@@ -402,7 +402,7 @@ public class LauncherClient {
     }
 
     private static void loadApiVersion(Context context) {
-        ResolveInfo resolveService = context.getPackageManager().resolveService(getIntent(context, false), PackageManager.GET_META_DATA);
+        ResolveInfo resolveService = null ;//context.getPackageManager().resolveService(getIntent(context, false), PackageManager.GET_META_DATA);
         apiVersion = resolveService == null || resolveService.serviceInfo.metaData == null ?
                 1 :
                 resolveService.serviceInfo.metaData.getInt("service.api.version", 1);
